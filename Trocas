@@ -1,0 +1,19 @@
+long long comparisons = 0;
+long long swaps = 0;
+
+void reset_counters() {
+    comparisons = 0;
+    swaps = 0;
+}
+
+int compare(const Image* a, const Image* b) {
+    comparisons++;
+    return (a->size > b->size) - (a->size < b->size);
+}
+
+void swap(Image* a, Image* b) {
+    swaps++;
+    Image temp = *a;
+    *a = *b;
+    *b = temp;
+}
